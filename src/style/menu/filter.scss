@@ -57,34 +57,46 @@
                 font-size: 1rem;
                 font-family: var(--besley-font);
                 cursor: pointer;
-                transition: transform 250ms, opacity 250ms, background-color 250ms, color 250ms;
+                transition: transform 250ms, opacity 250ms, background-color 250ms, color 250ms, scale 250ms;
                 
+                label{
+                    cursor: pointer;
+                    z-index: 1;
+                    // aspect-ratio: 1/1;
+                }
+                input[type="checkbox"]{
+                    display: none;
+                }
+                &:active{
+                    scale: .9;
+                }
                 &:has(svg) {
                     display: flex;
                     padding: .25rem;
                     border-radius: 50%;
+                    aspect-ratio: 1/1;
                     
                     * {
                         transition: fill 250ms, stroke 250ms;
-                        pointer-events: none;
+                        // pointer-events: none;
                     }
-                    &.active svg circle ~ path, &.active svg line + path{
+                    &:has(input[type="checkbox"]:checked) svg circle ~ path, &:has(input[type="checkbox"]:checked) svg line + path{
                         fill: #282633;
                     }
-                    &.active svg circle ~ path[stroke],
-                    &.active svg circle ~ line[stroke], 
-                    &.active svg circle, &.active svg circle + line {
+                    &:has(input[type="checkbox"]:checked) svg circle ~ path[stroke],
+                    &:has(input[type="checkbox"]:checked) svg circle ~ line[stroke], 
+                    &:has(input[type="checkbox"]:checked) svg circle, &:has(input[type="checkbox"]:checked) svg circle + line {
                         stroke: #f5f5f5;
                    }
-                    &.active svg path[clip-rule],
-                    &.active svg path[mask],
-                    &.active svg > path {
+                    &:has(input[type="checkbox"]:checked) svg path[clip-rule],
+                    &:has(input[type="checkbox"]:checked) svg path[mask],
+                    &:has(input[type="checkbox"]:checked) svg > path {
                         fill: #f5f5f5;
                     }
                 }
 
 
-                &.active{
+                &:has(input[type="checkbox"]:checked){
                     --secondy-color:#f5f5f5;
                     background-color: var(--thirdy-color);
                 }
@@ -126,7 +138,11 @@
                     border: none;
                     outline: none;
                     text-align: center;
-    
+                    
+                    appearance: textfield;
+                    &::-webkit-inner-spin-button{
+                        display: none;
+                    }
                 }
             }
         }

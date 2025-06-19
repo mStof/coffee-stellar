@@ -3,7 +3,7 @@ import img2 from "@/../public/img/cafe-2.webp";
 import img3 from "@/../public/img/cafe-3.webp";
 import img4 from "@/../public/img/cafe-4.webp";
 
-// TODO: Fazer o campo de preço;
+// TODO: Fazer o campo de Tamanho e tipo e tamanho;
 
 export async function GET(resquest) {
   const imgsCoffeeEarth = [img1, img2, img3, img4];
@@ -12,6 +12,8 @@ export async function GET(resquest) {
       id: 1,
       path:"CoffeEarth",
       name: "CoffeEarth",
+      type:'coffee',
+      sizes: ['500ml', '250ml'],
       price:  9.99,
       description:
         "Apresentamos CoffeEarth: uma experiência de café que captura os sabores distintos e a diversidade do nosso planeta Terra. Cada gole é uma viagem sensorial, com blends exclusivos que celebram as maravilhas naturais ao redor do mundo. Descubra o sabor da sustentabilidade em cada xícara.",

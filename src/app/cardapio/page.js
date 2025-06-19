@@ -1,9 +1,11 @@
+import Navbar from '../components/nav';
+import Player from '../components/player';
 import FilterToten from './components/filter';
 import Header from './components/header';
+import ProductsCard from './components/productCard';
 import { FilterProvider } from './components/filterContext';
 
 import "@/style/menu/style.scss"
-import ProductsCard from './components/productCard';
 
 export const metadata = {
     title: "Cardapio",
@@ -16,6 +18,8 @@ export default function HomeCardapio() {
     return (
         <>
           <Header>Produtos</Header>
+          <Navbar/>
+          <Player/>
           <main>
               <FilterProvider>
                 <FilterToten/>

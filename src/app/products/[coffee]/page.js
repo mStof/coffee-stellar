@@ -50,8 +50,6 @@ export default async function page({ params }) {
 
   return (
     <>
-      <Navbar />
-      <Player />
       <CoffeeHeader
         title={name}
         lactose={lactose}
@@ -60,7 +58,6 @@ export default async function page({ params }) {
       />
       <CoffeeInfos description={description} imgs={imgs} />
       <CoffeeTable nutricionalTableData={nutricionalTable} />
-      <Footer />
     </>
   );
 }

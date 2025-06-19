@@ -1,9 +1,10 @@
-"use client"
+"use client";
 import { useContext } from "react";
-import BtnList from "../BtnList";
 import FilterContext from "../../filterContext";
+import BtnList from "../BtnList";
 
 export default function TagsFilter() {
+  const { register } = useContext(FilterContext);
   const ColdSvg = (
     <svg
       width="24"
@@ -311,46 +312,28 @@ export default function TagsFilter() {
 
   const coffeeTags = [
     {
+      id: "coldInp",
       name: ColdSvg,
-      dispatchObj: {
-        type: "tagFilter",
-        payload: { invert: false, tag: "cold" },
-      }
     },
     {
+      id: "fireInp",
       name: FireSvg,
-      dispatchObj: {
-        type: "tagFilter",
-        payload: { invert: true, tag: "cold" },
-      }
     },
-    { 
+    {
+      id: "noGlutenInp",
       name: GlutenSvg,
-      dispatchObj: {
-        type: "tagFilter",
-        payload: { invert: false, tag: "glutem" },
-      }
     },
     {
+      id: "glutenInp",
       name: HasGlutenSvg,
-      dispatchObj: {
-        type: "tagFilter",
-        payload: { invert: true, tag: "glutem" },
-      }
     },
     {
+      id: "noLactoseInp",
       name: LactoseSvg,
-      dispatchObj: {
-        type: "tagFilter",
-        payload: { invert: false, tag: "lactose" },
-      }
     },
     {
+      id: "lactoseInp",
       name: HasLactoseSvg,
-      dispatchObj: {
-        type: "tagFilter",
-        payload: { invert: true, tag: "lactose" },
-      }
     },
   ];
 

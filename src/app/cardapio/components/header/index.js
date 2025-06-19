@@ -8,13 +8,11 @@ export default function Header({ children }) {
       <Image
         src={bgPattern}
         alt="Fundo de padrão de estrelas"
-        width={700}
         sizes="100vw"
         style={{
           objectFit: "cover",
           mixBlendMode: "overlay",
           position: "absolute",
-          width: "100vw",
         }}
         priority
       />

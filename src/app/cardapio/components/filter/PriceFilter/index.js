@@ -1,16 +1,17 @@
+'use client'
 import { useContext } from "react";
 import FilterContext from "../../filterContext";
 
 export default function PriceFilter() {
-  // const { handleOnChange } = useContext(FilterContext);
+  const { register } = useContext(FilterContext);
 
   return (
     <div className="price_container">
       <h2>Preços</h2>
       <div className="prices_input">
-        <input type="text" placeholder="R$00"></input>
+        <input type="number" placeholder="R$00" {...register('minPrice')}></input>
         até
-        <input type="text" placeholder="R$99"></input>
+        <input type="number" placeholder="R$99" {...register('maxPrice')}></input>
       </div>
     </div>
   );

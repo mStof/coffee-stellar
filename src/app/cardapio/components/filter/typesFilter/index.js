@@ -4,50 +4,32 @@ import BtnList from "../BtnList";
 import FilterContext from "../../filterContext";
 
 export default function TypeFilter() {
-  const { dispatch } = useContext(FilterContext);
+  const { register } = useContext(FilterContext);
 
   const coffeeTypes = [
     {
+      id:"Smoothies",
       name: "Smoothies",
-      dispatchObj: {
-        type: "sizeFilter",
-        payload: "smoothies",
-      }
     },
     {
+      id:"Cafés",
       name: "Cafés",
-      dispatchObj: {
-        type: "sizeFilter",
-        payload: "cafés",
-      }
     },
     {
+      id:"Chocolates",
       name: "Chocolates",
-      dispatchObj: {
-        type: "sizeFilter",
-        payload: "chocolates",
-      }
     },
     {
+      id:"Chás",
       name: "Chás",
-      dispatchObj: {
-        type: "sizeFilter",
-        payload: "chás",
-      }
     },
     {
+      id:"Favoritos",
       name: "Favoritos",
-      dispatchObj: {
-        type: "sizeFilter",
-        payload: "favoritos",
-      }
     },
     {
+      id:"Sucos",
       name: "Sucos",
-      dispatchObj: {
-        type: "sizeFilter",
-        payload: "sucos",
-      }
     },
   ];
 
